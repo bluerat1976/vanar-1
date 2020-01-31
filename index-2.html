@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Array</title>
+    
+  </head>
+
+  <body>
+      
+      <div id="box"></div>
+    
+    <script> 
+        
+     let quotes = [
+         
+         "Cats",
+         "Dogs",
+         "Birds",
+         "Horses!",
+         "Crocodile"
+     ]
+      
+     let current = 0;
+     function showQuote(i) {
+         let a = document.getElementById("box");
+         
+         let color;
+         if (quotes[i].endsWith("!")) {
+             color = "red"
+             } else {
+              color = "green"
+             }
+             
+         
+         a.innerHTML = `<bloquote style="color:${color};"> ${quotes[i]} </bloquote>`
+     }
+        
+        showQuote(current++);
+        
+        setInterval( function(){
+            showQuote(current)
+            current++
+            //???
+            
+            if( current > 4) {
+                current = 0
+            }
+            
+        }, 1000); //closure
+        
+      </script>
+
+  </body>
+</html>
