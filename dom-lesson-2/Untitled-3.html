@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <style>
+         #box{
+             background-color: green;
+             color: white;
+             width: 50px;
+             height: 50px;
+         }
+      
+      </style> 
+    <title>DOM structure</title>
+      
+  </head>
+
+  <body> 
+    
+   <input type='text' onkeyup='watch()'> 
+      
+      <p>Tipe thomething inside</p>
+      
+      <div id='box'> </div>
+      
+      <script>
+        function watch() {
+          let input = document.body.firstElementChild
+           let p = input.nextElementSibling 
+           
+           p.innerHTML = input.value
+        }
+        
+         function styles ()  {
+            let input = document.body.firstElementChild 
+           let div =  document.body.children[2].id
+           div.
+             
+         }
+          
+      </script>
+   
+      </body>
+</html>
