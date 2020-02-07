@@ -9,24 +9,52 @@
   </head>
 
   <body>
-    
-      <div id='box'> </div>
-      
+     
+    <div id='box-main'>
+        <h1>List of purchase</h1>
+        <div id='box'> </div>
+    </div>  
+
+    <input type="submit" onclick="func()" value="Add to the list">
+   
     <script> 
-        
-        
-        
+
+      let content = document.getElementById('box-main');
+      content.style.margin = '70px';
+      content.style.border = '1px solid #cccccc';
+      content.style.display = 'block';
+      content.firstElementChild.style.margin = '30px';
+      content.lastElementChild.style.marginBottom = '20px';
+      
+
         let ListOfWishes = ['salt', 'pepper', 'sugar'];
-        for (let i=0; i<=2; i++) {
-            let list = document.getElementById('box')
-            list.innerHTML = ListOfWishes[i] 
-           }     
-        
-        
-       
-        
-        
-      </script>
+        let color = '#034b6b';
+        let size = '26px';
+        let padding = '50px';
+        let list = document.getElementById('box');
+
+let i;
+        for ( i=0; i<ListOfWishes.length; i++) {
+            list.innerHTML += `<li style='color:${color};font-size:${size}; padding-left:${padding}'>
+               ${ListOfWishes[i] +'<br>'} </li>`
+        };
+
+        function func() {
+          let a = prompt('Add new item');
+  
+          ListOfWishes.push(a);
+           for(let j=0; j<=ListOfWishes.length; j++) {
+             list.innerHTML += `<li>${ListOfWishes[j] + '<br>'} </li>` 
+           }
+             
+          
+         
+        };
+         
+          
+
+
+      </script> 
 
   </body>
 </html>
