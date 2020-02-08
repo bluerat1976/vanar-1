@@ -15,7 +15,7 @@
         <div id='box'> </div>
     </div>  
 
-    <input type="submit" onclick="func()" value="Add to the list">
+    <input type="submit" onclick="func()" value="Add to the list" style="margin-left: 70px;">
    
     <script> 
 
@@ -26,33 +26,59 @@
       content.firstElementChild.style.margin = '30px';
       content.lastElementChild.style.marginBottom = '20px';
       
-
         let ListOfWishes = ['salt', 'pepper', 'sugar'];
         let color = '#034b6b';
         let size = '26px';
         let padding = '50px';
         let list = document.getElementById('box');
 
-let i;
+        let i;
         for ( i=0; i<ListOfWishes.length; i++) {
-            list.innerHTML += `<li style='color:${color};font-size:${size}; padding-left:${padding}'>
+          list.innerHTML += `<li style='color:${color};font-size:${size}; padding-left:${padding}'>
                ${ListOfWishes[i] +'<br>'} </li>`
-        };
+        };    
 
         function func() {
           let a = prompt('Add new item');
-  
-          ListOfWishes.push(a);
-           for(let j=0; j<=ListOfWishes.length; j++) {
-             list.innerHTML += `<li>${ListOfWishes[j] + '<br>'} </li>` 
-           }
-             
           
-         
+          if(ListOfWishes.includes(a)) {
+            alert('There is such item');
+            let a = prompt('Add new item');
+          } else {
+            ListOfWishes.push(a);
+            list.innerHTML = ListOfWishes;
         };
-         
+          alert('Do you need something else?')
+          if(true) {
+             
+            if(confirm('Is it important thing?') == true) {
+              let b = prompt('Add important thing')
+              ListOfWishes.unshift(b);
+              list.innerHTML = ListOfWishes;
+               
+              } else { 
+                let c = prompt('Add this thing at the end')
+                ListOfWishes.push(c);
+                list.innerHTML = ListOfWishes;
+                }  
+            }
+
+           
+        };
+          
+          
+               
+                 
+                  
+           
           
 
+
+          
+          
+       
+
+          
 
       </script> 
 
