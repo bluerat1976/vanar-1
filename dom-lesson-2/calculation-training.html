@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM structure</title>
+  </head>
+
+  <body> 
+    <input type="range" id="r1" oninput="fun1()">
+    <p id="one"></p>
+      
+      
+      <script>
+          function fun1() {
+    var rng=document.getElementById('r1'); //rng - это Input
+    var p=document.getElementById('one'); // p - абзац
+    p.innerHTML=rng.value;
+}
+      </script>
+   
+  </body>
+</html>
