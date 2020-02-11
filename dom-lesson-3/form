@@ -1,0 +1,20 @@
+*search functions
+
+        document.getElementById('identifier') -> Object / null
+        document.getElementsByTagName('tag') -> Object[] / []
+        document.getElementsByClassName('class') -> Object[] / []
+   
+        --
+        //new generation searching
+        document.querySelector('css selector') -> Object / null
+        document.querySelectorAll('css selector') -> Object[] / []
+ 
+ *interaction with document
+
+ div.innerHTML = `<h1 class='box'>Hello</h1>`
+
+ document.createElement('tag')
+
+ element.setAttribute('name', 'value')
+ element.removeAtribute('name')
+ parentElement.apendChild(element)
