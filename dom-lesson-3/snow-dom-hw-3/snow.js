@@ -38,5 +38,11 @@ function removeFlake() {
 setInterval(removeFlake, 0.002);
 
 
+function quantity() {
+    let div3 = document.getElementsByTagName('div')
+    console.log(div3.length)
+};
+setInterval(quantity, 1000)
+
 
 
