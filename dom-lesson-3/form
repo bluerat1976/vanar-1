@@ -18,3 +18,14 @@
  element.setAttribute('name', 'value')
  element.removeAtribute('name')
  parentElement.apendChild(element)
+
+
+
+/* example of finding top in object snow.
+
+function showTop(){
+    let snow = document.querySelector('.flake');
+    console.log(snow.getBoundingClientRect().top)
+}
+setInterval(showTop, 3000)
+*/
