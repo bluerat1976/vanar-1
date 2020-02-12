@@ -1,0 +1,50 @@
+#map {
+    border: 1px solid #aaaaaa;
+}
+
+#land {
+    border-bottom: 5px solid #b3a766;
+    display: flex;
+}
+
+#sky {
+    background-color: #e9f2f8;
+}
+
+.dino {
+    background-image: url(images/22289-T-Rex-icon.png);
+    width: 48px;
+    height: 48px;
+    border: 1px solid #cccccc;
+    transform: scaleX(-1);
+    /* rotate also is possible for rotating dino-rex */
+}
+
+
+.cactus {
+    background-image: url(images/22332-cactus-icon.png);
+    width: 48px;
+    height: 48px;
+    border: 1px solid #cccccc;
+}
+
+#cloud {
+    background-image: url(images/cloud-icon.png);
+    width: 48px;
+    height: 48px;
+    border: 1px solid #cccccc;
+}
+
+.empty {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #cccccc;
+}
+
+.meat {
+    background-image: url(images/32379-poultry-leg-icon.png);
+    width: 48px;
+    height: 48px;
+    border: 1px solid #cccccc;
+   
+}
