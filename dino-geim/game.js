@@ -35,12 +35,25 @@ function renderMap() {
     }   
 }
 
+
 function clearMap() {
     let lend = document.getElementById('land')
+    
+   /*
+    let div = document.getElementsByTagName('div')
+    for(let i=0; i<data.length; i++) {
+        if(data[0] == div) {
+            lend.removeChild(div)
+        }  
+    }
+    */
+   
     lend.innerHTML = ''
-
     // for + .removeChild()
 }
+
+clearMap()
+
 
 function move()  {
     // remove second value(square) from 'data'.
@@ -53,7 +66,6 @@ function move()  {
     } else {
         data.push(0)
     }
-   
 }
 
 function jump() {
