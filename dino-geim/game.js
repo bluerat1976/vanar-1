@@ -37,21 +37,22 @@ function renderMap() {
 
 
 function clearMap() {
-    let lend = document.getElementById('land')
     
-   /*
-    let div = document.getElementsByTagName('div')
-    for(let i=0; i<data.length; i++) {
-        if(data[0] == div) {
-            lend.removeChild(div)
-        }  
-    }
-    */
-   
-    lend.innerHTML = ''
+    let lend = document.getElementById('land')
+    for(let i =0; i<data.length; i++) {
+
+        let div = document.getElementsByTagName('div')
+        for(let j = 0; j<div.length; j++ ) {
+            
+            if(data[i] !== REX) {
+                lend.removeChild(div[i])
+            }
+        }
+    }         
+    //lend.innerHTML = ''
     // for + .removeChild()
 }
-
+    
 clearMap()
 
 
