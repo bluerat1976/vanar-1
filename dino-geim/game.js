@@ -38,19 +38,11 @@ function renderMap() {
 
 function clearMap() {
     
-    let lend = document.getElementById('land')
-    for(let i =0; i<data.length; i++) {
-
-        let div = document.getElementsByTagName('div')
-        for(let j = 0; j<div.length; j++ ) {
-            
-            if(data[i] !== REX) {
-                lend.removeChild(div[i])
-            }
-        }
-    }         
+    let land = document.getElementById('land')
+    while(land.children.length>0) {
+         land.removeChild(land.children[0])
+    }          
     //lend.innerHTML = ''
-    // for + .removeChild()
 }
     
 clearMap()

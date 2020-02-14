@@ -35,7 +35,7 @@ function removeFlake() {
     }    
 };
 
-setInterval(removeFlake, 0.002);
+setInterval(removeFlake, 50);
 
 
 function quantity() {
