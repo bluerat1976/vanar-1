@@ -1,4 +1,7 @@
 let div  = document.body.firstElementChild.firstElementChild;
+let box = document.getElementById('form-box')
+let boxName = document.createElement('h3')
+let q = document.createElement('h4')
 
 /*
 (doesn't work)
@@ -6,6 +9,7 @@ let div  = document.body.firstElementChild.firstElementChild.getAttribute('place
 */
 
 div.addEventListener('keyup', checkName)
+div.addEventListener('keyup', quant)
 
 function checkName(){
    
@@ -27,6 +31,7 @@ function checkName(){
 
     */
    
+   /* (Works, but not good performance. Client wouldn't like this) 
    div = prompt('Input something')
     alert(div.length)
 
@@ -36,4 +41,25 @@ function checkName(){
             div2.removeAttribute('disabled')
         }   
     }
+    */
+
+   for (let i =0; i < div.value.length; i++) {
+
+        if (div.value[i] == ' ' && div.value.length>=5) {
+        let div2  = document.body.firstElementChild.lastElementChild;
+        div2.removeAttribute('disabled')
+        }   
+    }  
+    //console.log(quantity)
 }
+
+
+/*
+(work by themselves, but second field stay disabled)
+
+function quant() {
+    box.appendChild(boxName).innerHTML = 'Quantity of figures';
+    box.appendChild(q).innerHTML = div.value.length;
+}
+*/
+
