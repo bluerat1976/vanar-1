@@ -1,0 +1,29 @@
+body {
+    background-color: #193e6e;
+}
+
+#map {
+    width: 500px;
+    height: 500px;
+    border: 5px solid #3f5d88;
+}
+
+#map div {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #546783;
+    float: left;
+}
+
+#map .pacman {
+    background-image: url(./img/Chain-Chomp-icon.png);
+}
+
+#map .cherry{
+    background-image: url(./img/Cherry-icon.png);
+}
+
+#map .bomb {
+    background-image: url(./img/12158-bomb-icon.png);
+}
+
