@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIMPLE LIKE BUTTON</title>
+</head>
+<body>
+    
+    <button id="but" class="btn like">...</button>
+
+    <script>
+        let button = document.getElementById('but')    
+       
+        button.addEventListener("click", like)
+          
+            function like(){
+                button.innerHTML = 'Like'
+                button.removeEventListener("click", like)
+                button.addEventListener("click", unlike)
+            } 
+           
+            function unlike(){
+                button.innerHTML = 'Unlike'
+                button.removeEventListener("click", unlike)
+                button.addEventListener("click", like)
+            }
+            
+    </script>
+</body>
+</html>
