@@ -9,13 +9,19 @@ const BOMB = 3;
 
 let pac_r = 0;
 let pac_c = 0;
+let pac_d ='right';
+let pac_hp = 200 // zdorovie
+let st = document.getElementById('status');
+let pac_stat ='';
+let pac_aura = '';
+
 
 let map = [
     [1,0,0,0,0,2,0,0,0,0],
-    [0,0,3,0,0,0,0,0,0,0],
+    [3,0,3,0,0,0,0,0,2,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,3,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
+    [0,2,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,3,0,0],
     [0,0,0,2,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
@@ -33,7 +39,12 @@ function renderMap() {
         }
     }
       //console.log(map.length) // rows
-    //console.log(map[i].length) // colls   
+    //console.log(map[i].length) // colls  
+    renderStatus()
+}
+
+function renderStatus() {
+    st.innerHTML = pac_hp
 }
 
 function clearMap()  {
@@ -51,7 +62,7 @@ function renderCell(what) {
     
     switch(what) {
         case 1: 
-            div.className = 'pacman'
+            div.className = `pacman ${pac_d} ${pac_stat} ${pac_aura}`
         break;
         case 2:  
             div.className = 'cherry'
@@ -59,78 +70,99 @@ function renderCell(what) {
         case 3:
              div.className = 'bomb'
         break;
-
     }
-        
+    
     div_map.appendChild(div);
 
     //console.log(div)
 }
 
-function action(where) {
-  
-    switch(where) {
-        case 1:
-            event.code == ArrowRight;  
+function action(event) {
+    map[pac_r][pac_c] = EMPTY;
+    switch(event.code) {
+        case 'ArrowRight':
             moveRight();
         break;
 
-        case 2:
-            event.code == ArrowLeft;
+        case 'ArrowLeft':
             moveLeft();
         break;
 
-        case 3: 
-            event.code == ArrowDown;  
+        case 'ArrowDown':  
             moveDown()
         break;
 
-        case 4: 
-            event.code == ArrowUp;  
+        case 'ArrowUp':  
             moveUp()
-        break;
+         break;
     }
-
+    map[pac_r][pac_c] = PACMAN;
+    clearMap()
+    renderMap()
     //alert(event.code)
+}
+
+function checkBomb() {
+    if(map[pac_r][pac_c] == BOMB) {
+            pac_hp -= 50;
+            pac_stat = 'exploding'
+            setTimeout(function(){pac_stat = ''
+            clearMap()
+            renderMap()
+        
+        }, 1000)
+      
+    }
+}
+
+function checkCherry() {
+    if(map[pac_r][pac_c] == CHERRY) {
+        pac_hp += 10;
+        pac_stat = 'aura';
+        setTimeout(function(){pac_stat = ''
+        clearMap()
+        renderMap()
+    }, 1000)
+    }
 }
 
 // function moveRight moves pacman to the rigt.
 function moveRight() {
-    map[pac_r][pac_c] = EMPTY;
-    pac_c++;
-    map[pac_r][pac_c] = PACMAN;
-    
-    clearMap()
-    renderMap()
+    if(pac_c < 9) {
+        pac_c++;
+        checkBomb()
+        checkCherry()
+    }
+    pac_d = 'right'
 }
 
 function  moveLeft() {
-    map[pac_r][pac_c] = EMPTY;
-    pac_c--;
-    map[pac_r][pac_c] = PACMAN;
-    
-    clearMap()
-    renderMap()
+    if(pac_c > 0) {
+        pac_c--;
+        checkBomb()
+        checkCherry()
+    }
+    pac_d = 'left'
 }
 
 function moveDown() {
-    map[pac_r][pac_c] = EMPTY;
-    pac_r++;
-    map[pac_r][pac_c] = PACMAN;
-    
-    clearMap()
-    renderMap()
+    if(pac_r < 9) {
+        pac_r++;
+        checkBomb()
+        checkCherry()
+    }
+    pac_d = 'down'
 }
 
 function moveUp() {
-    map[pac_r][pac_c] = EMPTY;
-    pac_r--;
-    map[pac_r][pac_c] = PACMAN;
-    
-    clearMap()
-    renderMap()
-}
+    if(pac_r >0) { 
+        pac_r--;
+        checkBomb()
+        checkCherry()
+    }
 
+    pac_d = 'up'
+}
 
 clearMap()
 renderMap()

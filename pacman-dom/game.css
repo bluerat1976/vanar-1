@@ -19,6 +19,16 @@ body {
     background-image: url(./img/Chain-Chomp-icon.png);
 }
 
+#map .pacman.exploding {
+    background-image: url(./img/giphy.gif), url(./img/Chain-Chomp-icon.png);
+    background-size: contain, contain;
+}
+
+#map .pacman.aura {
+    background-image: url(./img/7SmG.gif), url(./img/Chain-Chomp-icon.png);
+    background-size: contain, contain;
+}
+
 #map .cherry{
     background-image: url(./img/Cherry-icon.png);
 }
@@ -27,3 +37,36 @@ body {
     background-image: url(./img/12158-bomb-icon.png);
 }
 
+.right {
+    transform: rotate(0);
+}
+
+.down {
+    transform: rotate(90deg);
+}
+
+.left {
+    transform: rotate(180deg); 
+    transform: scaleX(-1); 
+}
+
+.up {
+    transform: rotate(270deg);
+}
+
+#status {
+    display: block;
+    width: 40px;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    background-color: #d0d9e7;
+    color: #07172c;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+h2 {
+    margin-left: 20px;
+    margin-top: 30px;
+    color: #d0d9e7;
+}
