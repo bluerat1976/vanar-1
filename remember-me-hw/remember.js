@@ -27,7 +27,7 @@ let showGreeting = ()=> {
     // 2.let name <=== user
    let us = JSON.parse(localStorage.getItem('user'))
     
-   alert(us.name)
+   //alert(us.name)
 
    let hel = document.getElementById('content');
    let b = ` <h1> Hello ${us.name} username </h1>`
@@ -43,3 +43,11 @@ showGreeting()
 //let btn = getElementById('click)
 //btn.onclick = saveData
 
+let findCell = () => {
+    let us = JSON.parse(localStorage.getItem('user'))
+    if(us == true) {
+        showGreeting()
+    } else {
+        showForm()
+    }
+}
