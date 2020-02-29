@@ -23,6 +23,19 @@ class LikeButton {
         } else {
             this.element.innerHTML = `1T Likes: ${this.likes}`
         }
+        
+       /* doesn't work short condition writing. 
+       
+       if(this.likes == 0) {
+            this.element.innerHTML = `Likes!: ${this.likes}`
+        } else if( 1<= this.likes < 6 ) {
+            this.element.innerHTML = `100 Likes: ${this.likes}`
+        } else if( 6 <= this.likes <= 12 ) {
+            this.element.innerHTML = `10.5k Likes: ${this.likes}`
+        } else {
+            this.element.innerHTML = `1T Likes: ${this.likes}`
+        }
+        */
     }
 }
 
