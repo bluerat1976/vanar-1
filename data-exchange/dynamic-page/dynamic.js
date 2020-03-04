@@ -8,7 +8,6 @@ let loadPage = (page) => {
     // 2. prepare conection
     xhr.open('GET', `pages/${page}.html`)
 
-    
 
     // 2-a. when data loaded
     xhr.onload =() => {
@@ -19,13 +18,10 @@ let loadPage = (page) => {
     let div = document.getElementById('content')
     div.innerHTML = xhr.responseText
     
-
     }
 
     //3. send request
     xhr.send()
-
-    
 
 }
 
